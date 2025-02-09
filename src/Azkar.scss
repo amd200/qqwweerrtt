@@ -1,0 +1,22 @@
+.azkar {
+
+    .card {
+      width: 800px;
+      @media (max-width:900px) {
+        width: 400px;
+      }
+      @media (max-width:500px) {
+        width: 300px;
+      }
+      @media (max-width:320px) {
+        width: 180px;
+      }
+    .card-body {
+      .card-text {
+      padding: 30px;
+      font-size: 20px;
+      line-height: 40px;
+      }
+    }
+  }
+}

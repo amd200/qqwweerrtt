@@ -1,0 +1,15 @@
+.slah table {
+  width: 400px;
+  height: 400px;
+  margin-top: 50px;
+}
+@media (max-width: 500px) {
+  .slah table {
+    width: 300px;
+  }
+}
+@media (max-width: 320px) {
+  .slah table {
+    width: 180px;
+  }
+}/*# sourceMappingURL=Slah.css.map */

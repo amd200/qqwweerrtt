@@ -1,0 +1,34 @@
+nav {
+  background-color: #373b3e;
+  z-index: 100;
+
+  .logo {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    padding-left: 20px !important;
+    cursor: pointer;
+    
+  }
+    .navListItem {
+      transition: 0.3s;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 50%;
+        background-color: #fff;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: 0.3s;
+      }
+      &:hover {
+        transform: translateX(-5px);
+        &::before {
+          opacity: 1;
+        }
+      }
+  }
+}
