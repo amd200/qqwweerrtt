@@ -1,11 +1,15 @@
 import React, {useState} from 'react'
 import { useLocation, useNavigate } from 'react-router'
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import darkModeAction from './redux/actions/darkModeAction'
 function MyNav()  {
   const location = useLocation();
   const currentPath = location.pathname;
   const [activeTab, setActiveTab] = useState(currentPath);
   const navigate = useNavigate();
+  const theme = useSelector((state) => state.darkModeReducer.theme); // Adjust this if your state shape is different
+  const dispatch = useDispatch()
   const navHome = () =>{
     navigate('/')
     setActiveTab('/')
@@ -60,6 +64,13 @@ function MyNav()  {
                   className={'navListItem' + ' ' + (activeTab === '/radio' ? 'active' : '')}>
                   الراديو
                 </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Button onClick={()=>{
+                    dispatch(darkModeAction(theme))
+                }}>
+                  dark
+                </Button>
               </Nav.Item>
             </Nav>
           </Navbar.Collapse>

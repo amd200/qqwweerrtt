@@ -8,21 +8,23 @@ import Slah from './Slah';
 import Azkar from './Azkar'
 import Radio from './Radio'
 import Footer from './Footer'
+import { useSelector } from 'react-redux'
 function App() {
-
+  const theme = useSelector(state => state.darkModeReducer.theme)
   return (
-
-  <BrowserRouter>
-    <MyNav />
-    <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/quran" element={<Quran />} />
-      <Route path="/slah" element={<Slah />} />
-      <Route path="/azkar" element={<Azkar />} />
-      <Route path="/radio" element={<Radio />} />
-    </Routes>
-    <Footer />
-  </BrowserRouter>
+    <BrowserRouter>
+    <div className={`app ${theme}`}>
+      <MyNav />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/quran" element={<Quran />} />
+        <Route path="/slah" element={<Slah />} />
+        <Route path="/azkar" element={<Azkar />} />
+        <Route path="/radio" element={<Radio />} />
+      </Routes>
+      <Footer />
+    </div>
+    </BrowserRouter>
   )
 }
 
